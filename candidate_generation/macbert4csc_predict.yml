@@ -1,0 +1,42 @@
+MODEL:
+  BERT_CKPT: "hfl/chinese-macbert-base"
+#  BERT_CKPT: "bert-base-chinese"
+  DEVICE: "cuda"
+  NAME: "macbert4csc"
+  GPU_IDS: [0]
+#  GPU_IDS: [0]
+  HYPER_PARAMS: [0.3]
+  # SIGHAN BASELINE
+#  WEIGHTS: "/data/tongcd/csc2025/sota/outputs-sighan15-macbert4csc/epoch=06-val_loss=0.03.ckpt"
+  # ECSPELL LAW
+#  WEIGHTS: "/data/tongcd/csc2025/sota/outputs-ecspell-law-macbert4csc/epoch=47-val_loss=0.03.ckpt"
+
+#  WEIGHTS: "/data/tongcd/csc2025/sota/outputs-cscd-macbert4csc/epoch=08-val_loss=0.02.ckpt"
+#  WEIGHTS: "/data/tongcd/csc2025/sota/outputs-cscd-randommacbert4csc/epoch=08-val_loss=0.02-v1.ckpt"
+#  WEIGHTS: "/data/tongcd/csc2025/sota/outputs-sighan-randommacbert4csc/epoch=09-val_loss=0.03-v1.ckpt"
+  WEIGHTS: "/data/tongcd/thsis_projects/csc_corr/sota/outputs-sighan-2-5-mask30-S2-linear/epoch=06-val_loss=0.02.ckpt"
+#  WEIGHTS: "/data/tongcd/csc2025/sota/outputs-sighan-randommacbert4csc/epoch=09-val_loss=0.03.ckpt"
+
+#  WEIGHTS: "/data/tongcd/csc2025/sota/outputs-macbert4csc/epoch=09-val_loss=0.01.ckpt"
+#  WEIGHTS: "/data/tongcd/csc2023/output/finetune/origin/epoch=09-val_loss=0.01.ckpt"
+DATASETS:
+#  TEST: "/data/tongcd/datasets/alipayseq/test-with-mask.tsv"
+  TEST: "/data/tongcd/datasets/sighan/test15.tsv"
+#  TEST: "/data/tongcd/datasets/sighan_new/train_sighan-with-mask.tsv.sampled"
+#   TEST: "/data/tongcd/datasets/ecspell/test_law-with-mask.tsv"
+#   TEST: "/data/tongcd/datasets/alipayseq/test-with-mask.tsv"
+#  TEST: "/data/tongcd/datasets/cscd-ns/cscd-ns/test-with-mask.tsv"
+#  TEST: "/data/tongcd/datasets/cscd-ns/cscd-ns/train-with-mask.tsv"
+
+SOLVER:
+  BASE_LR: 2e-5
+  WEIGHT_DECAY: 0.01
+  BATCH_SIZE: 64
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 1
+
+OUTPUT_DIR: "outputs-macbert4csc"
+#OUTPUT_DIR: "outputs-sighan15-macbert4csc"
+MODE: ["test"]
+#MODE: ["test"]
+

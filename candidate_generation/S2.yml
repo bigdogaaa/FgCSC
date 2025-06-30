@@ -1,0 +1,36 @@
+MODEL:
+  BERT_CKPT: "hfl/chinese-macbert-base"
+
+  TOKENIZER_PATH: ""
+  DEVICE: "cuda"
+  NAME: "macbert4csc"
+  GPU_IDS: [1,2,3,4,5,6,7]
+#  GPU_IDS: [0]
+  # LM loss weight
+  HYPER_PARAMS: [0.3]
+  STAGE_START_EPOCH: 2
+  STAGE_MAX_EPOCH: 5
+  DET_LOSS_MAX_WEIGHT: 1.0
+#  WEIGHTS: S1 obtained model path
+  WEIGHTS: "outputs-sighan-2-5-mask30-S1-linear/epoch=07-val_loss=0.08.ckpt"
+DATASETS:
+#  TRAIN: "/data/datasets/cscd-ns/cscd-ns/lcsts-ime-2m-with-mask.tsv"
+#  VALID: "/data/datasets/cscd-ns/cscd-ns/test-with-mask.tsv"
+#  TEST: "/data/datasets/cscd-ns/cscd-ns/test-with-mask.tsv"
+
+  TRAIN: "train_sighan.tsv"
+  VALID: "test15.tsv"
+  TEST: "test15.tsv"
+
+
+SOLVER:
+  BASE_LR: 5e-5
+  WEIGHT_DECAY: 0.01
+  BATCH_SIZE: 128
+  MAX_EPOCHS: 10
+  ACCUMULATE_GRAD_BATCHES: 1
+
+OUTPUT_DIR: "outputs-sighan-2-5-mask30-S2-linear"
+MODE: ["train", "test"]
+
+

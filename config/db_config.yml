@@ -1,0 +1,14 @@
+llm:
+  qw25_7b_url: http://localhost:8001/v1
+  qw25_14b_url: http://localhost:8002/v1
+  deepseek_32b_url: http://localhost:8012/v1
+  deepseek_7b_url: http://localhost:8011/v1
+  temperature: 0.1
+  use: qw7b
+
+word_dic:
+  pkl_path: /data/word_with_inf.pkl
+  external_dic: /data/word_filtered.txt
+
+word_segment:
+  enable_user_dict: false

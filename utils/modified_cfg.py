@@ -1,0 +1,12 @@
+from pycorrector.macbert.defaults import _C as cfg
+
+cfg.MODEL.TOKENIZER_PATH = ''
+cfg.MODEL.SIM_REG_WEIGHT = 0.1
+cfg.MODEL.GPT2_CKPT = ''
+cfg.MODEL.STAGE_START_EPOCH = 2
+cfg.MODEL.STAGE_MAX_EPOCH = 5
+cfg.MODEL.DET_LOSS_MAX_WEIGHT = 1.0
+cfg.MODEL.SIM_WEIGHT = 1.0
+cfg.MODEL.KL_LOSS_WEIGHT = 1.0
+
+
