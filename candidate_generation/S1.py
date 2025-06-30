@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
-"""
-@author:XuMing(xuming624@qq.com), Abtion(abtion@outlook.com)
-@description:
-"""
+
 import argparse
 import os
 import sys

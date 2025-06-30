@@ -1,13 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
-"""=================================================
-@Project -> File   ：voca -> config_reader
-@IDE    ：PyCharm
-@Author ：lyq
-@Date   ：2024/7/9 14:40
-@Desc   ：
-=================================================="""
-# config_reader.py
+
 
 import yaml
 import os
